@@ -7,6 +7,7 @@ astronauts_bp = Blueprint('astronauts', __name__)
 
 @astronauts_bp.route('/space')
 def astronauts():
+    """The space - route"""
     data = get_astronauts()
     number = data['number']
     stations = get_station_astronauts(data['people'])

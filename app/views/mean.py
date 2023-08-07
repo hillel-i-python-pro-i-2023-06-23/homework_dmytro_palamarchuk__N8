@@ -9,6 +9,7 @@ mean_bp = Blueprint('mean', __name__)
 
 @mean_bp.route('/mean')
 def mean():
+    """The mean - route"""
     height, weight = calculate_avg_value_from_people_csv_data(
         get_data_from_google_drive()
     )

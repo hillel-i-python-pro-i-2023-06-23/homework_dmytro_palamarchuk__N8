@@ -7,3 +7,5 @@ disable=logging-fstring-interpolation
 # Exceptions that will emit a warning when being caught. Defaults to
 # "Exception"
 overgeneral-exceptions=Exception
+
+disable = no-name-in-module

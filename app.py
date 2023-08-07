@@ -1,20 +1,18 @@
 """Entry point"""
 from flask import Flask
+from dotenv import load_dotenv
 
+from app.config import ROOT_DIR
+from app.loggers.init_logging import init_logging
 from app.views.home import home_bp
 from app.views.read_file import read_file_bp
 from app.views.generate_users import generate_users_bp
 from app.views.astronauts import astronauts_bp
 from app.views.mean import mean_bp
 
-from dotenv import load_dotenv
-from app.loggers.init_logging import init_logging
-from app.config import ROOT_DIR
-
 app = Flask(__name__)
 
-app.root_path = ROOT_DIR.joinpath('app')
-
+app.root_path = ROOT_DIR.joinpath("app")
 
 app.register_blueprint(home_bp)
 app.register_blueprint(read_file_bp)
@@ -28,8 +26,4 @@ if __name__ == "__main__":
     # Initialize logging
     init_logging()
 
-    app.run(
-        host='0.0.0.0',
-        port=5000,
-        debug=True
-    )
+    app.run(host="0.0.0.0", port=5000, debug=True)
