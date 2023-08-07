@@ -1,0 +1,13 @@
+version: '3.9'
+
+services:
+  app:
+    build: .
+#    env_file:
+#      - ./.env
+    volumes:
+      - ./logs:/wd/logs:rw
+      - ./files_input:/wd/files_input:ro
+    user: "${USER_ID}:${GROUP_ID}"
+    ports:
+      - "5000:5000"

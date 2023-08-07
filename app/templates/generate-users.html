@@ -1,0 +1,9 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <ol>
+        {% for user in users %}
+            <li>{{ user.username }} - <a href="mailto:{{ user.email }}">{{ user.email }}</a></li>
+        {% endfor %}
+    </ol>
+{% endblock %}
