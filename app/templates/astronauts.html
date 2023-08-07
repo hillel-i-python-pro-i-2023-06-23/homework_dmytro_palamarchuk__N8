@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <div>
+        Number of astronauts in space: {{ number }}
+    </div>
+    <div>
+        {% for station in stations %}
+            <span>Astronauts who are on the {{ station }} space station:</span>
+            <ol>
+                {% for astronaut in stations[station] %}
+                    <li>{{ astronaut }}</li>
+                {% endfor %}
+            </ol>
+        {% endfor %}
+    </div>
+
+{% endblock %}

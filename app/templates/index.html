@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}Flask App{% endblock %}</title>
+    </head>
+    <body>
+        <h1>ДЗ 8. Flask. Make Routes for mini-tasks. File, Generate Data, Request, CSV.</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home.index') }}">Home</a></li>
+                <li><a href="{{ url_for('read_file.read_file') }}">Считывание файла</a></li>
+                <li><a href="{{ url_for('generate_users.generate_users') }}">Генератор пользователей</a></li>
+                <li><a href="{{ url_for('astronauts.astronauts') }}">Кто здесь?</a></li>
+                <li><a href="{{ url_for('mean.mean') }}">Среднячок</a></li>
+            </ul>
+        </nav>
+
+        <div class="content">
+            {% block content %}{% endblock %}
+        </div>
+
+        <footer>
+            &copy; {{ current_year }} Homework #8
+        </footer>
+    </body>
+</html>
