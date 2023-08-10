@@ -4,6 +4,6 @@
 # Exclude
 !app
 !run.py
-!app.py
+!app/app.py
 !requirements.txt
 !.env

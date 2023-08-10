@@ -3,11 +3,12 @@ version: '3.9'
 services:
   app:
     build: .
-#    env_file:
-#      - ./.env
-    volumes:
-      - ./logs:/wd/logs:rw
-      - ./files_input:/wd/files_input:ro
+    environment:
+      - FLASK_APP=app.app
+      - FLASK_RUN_PORT=45000
+      - FLASK_RUN_HOST=app
+      - FLASK_DEBUG=0
+      - FLASK_ENV=production
     user: "${USER_ID}:${GROUP_ID}"
     ports:
-      - "5000:5000"
+      - "48000:45000"
