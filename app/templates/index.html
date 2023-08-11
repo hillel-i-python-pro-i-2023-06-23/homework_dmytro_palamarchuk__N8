@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}ДЗ 15. Flask. Routes & Ports.{% endblock %}</title>
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('hello_world') }}">Привет мир.</a></li>
+                <li><a href="{{ url_for('hello_world_dynamic', name = 'Test', number=10) }}">Приветствие с динамическим маршрутом.</a></li>
+                <li><a href="{{ url_for('hello_world_query', name='Test Query', number=12) }}">Приветствие с query в URL.</a></li>
+            </ul>
+        </nav>
+        <h4>{% block task_title%}{{ task_title|d('Привет мир.', true) }}{% endblock %}</h4>
+        <div class="content">
+            {% block content %}
+                {{ data }}
+            {% endblock %}
+        </div>
+
+        <footer>
+            &copy; {{ current_year }} Homework #8
+        </footer>
+    </body>
+</html>
