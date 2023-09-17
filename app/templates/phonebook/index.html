@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}HW 9. Flask. Routes & Ports.{% endblock %}</title>
+    </head>
+    <body>
+        {% block messages %}
+            {% for mesg in get_flashed_messages() %}
+              <h3>{{ mesg }}</h3>
+            {% endfor %}
+        {% endblock %}
+        <h2>{% block task_title %}HW 9. Flask. Routes & Ports.{% endblock %}</h2>
+        <h4>{% block task_sub_title %}{{ 'List of phones' }}{% endblock %}</h4>
+        <div class="content">
+            {% block content %}
+                <a href="{{ url_for('phonebook.create') }}" class="btn btn-primary">Add Phone</a>
+                <hr>
+                <table class="table" border="1">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Phone</th>
+                            <th colspan="3">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for phone in data %}
+                            <tr>
+                                <td>{{ phone.phone_id }}</td>
+                                <td>{{ phone.contact_name }}</td>
+                                <td>{{ phone.phone_value }}</td>
+                                <td><a href="{{ url_for('phonebook.get', phone_id = phone.phone_id) }}" class="btn btn-primary">View</a></td>
+                                <td><a href="{{ url_for('phonebook.update', phone_id = phone.phone_id) }}" class="btn btn-primary">Update</a></td>
+                                <td><a href="{{ url_for('phonebook.delete', phone_id = phone.phone_id) }}" class="btn btn-primary">Delete</a></td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% endblock %}
+        </div>
+
+        <footer>
+            &copy; {{ current_year }} Homework #15, #9
+        </footer>
+    </body>
+</html>

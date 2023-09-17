@@ -1,0 +1,27 @@
+{% extends 'phonebook/index.html' %}
+
+{% block task_sub_title %}{{ 'Create phone' }}{% endblock %}
+
+{% block content %}
+    <a href="{{ url_for('phonebook.phone_list') }}" class="btn btn-primary">View All</a>
+    <hr>
+    <form method="POST">
+        {{ form.csrf_token }}
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+            {{ form.name.label(class="form-label") }}
+            {{ form.name(class="form-control") }}
+            {% if form.name.errors %}
+                <div class="alert alert-danger">{{ form.name.errors | join(", ") }}</div>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            {{ form.phone_number.label(class="form-label") }}
+            {{ form.phone_number(class="form-control") }}
+            {% if form.phone_number.errors %}
+                <div class="alert alert-danger">{{ form.phone_number.errors | join(", ") }}</div>
+            {% endif %}
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+{% endblock %}

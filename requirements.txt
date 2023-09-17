@@ -4,6 +4,13 @@ flask==2.3.2
 # For requests
 requests==2.31.0
 
+#Flask form
+Flask-WTF==1.1.1
+WTForms==3.0.1
+
+#For phone number validation
+phonenumbers==8.13.20
+
 # For name generation.
 faker==19.2.0
 # For environment variables
