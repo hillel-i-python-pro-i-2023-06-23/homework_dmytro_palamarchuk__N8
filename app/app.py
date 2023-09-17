@@ -1,7 +1,12 @@
 """Entry point"""
 from flask import Flask, render_template, request
 
+from app.views.phonebook import phonebook
+
 app = Flask(__name__)
+
+app.config["SECRET_KEY"] = "iFdTCiQ8WVYAbXVjLx6N3ePV8LZc5c8l"
+app.register_blueprint(phonebook, url_prefix="/phonebook")
 
 
 @app.route("/", methods=["GET"])

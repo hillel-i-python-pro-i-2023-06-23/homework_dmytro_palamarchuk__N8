@@ -4,6 +4,15 @@
         <title>{% block title %}ДЗ 15. Flask. Routes & Ports.{% endblock %}</title>
     </head>
     <body>
+        <div>
+            <nav>
+                <ul>
+                    <li><a href="/">Homework #15</a></li>
+                    <li><a href="/phonebook">Homework #9(Phonebook)</a></li>
+                </ul>
+            </nav>
+        </div>
+        <h1>{% block homework %}Homework #15{% endblock %}</h1>
         <nav>
             <ul>
                 <li><a href="{{ url_for('hello_world') }}">Привет мир.</a></li>

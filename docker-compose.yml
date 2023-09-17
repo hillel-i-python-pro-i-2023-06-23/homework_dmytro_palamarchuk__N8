@@ -12,3 +12,5 @@ services:
     user: "${USER_ID}:${GROUP_ID}"
     ports:
       - "48000:45000"
+    volumes:
+      - ./db:/wd/db:rw
